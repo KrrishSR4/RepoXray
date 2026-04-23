@@ -1,0 +1,13 @@
+project_id = "itcmxtizkcjyrwrurztz"
+
+[functions.analyze-repo]
+verify_jwt = false
+
+[functions.chat-repo]
+verify_jwt = false
+
+[functions.explain-snippet]
+verify_jwt = false
+
+[functions.developer-mode]
+verify_jwt = false
