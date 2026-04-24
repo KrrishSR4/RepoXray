@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { ArrowLeft, Loader2, Sparkles, Copy, Trash2, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Markdown } from "@/components/Markdown";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { useTheme } from "next-themes";
 
 const LANGS = ["auto", "javascript", "typescript", "python", "java", "go", "rust", "cpp", "ruby", "php", "csharp"];
 
@@ -17,6 +18,11 @@ const SnippetExplain = () => {
   const [language, setLanguage] = useState("auto");
   const [loading, setLoading] = useState(false);
   const [explanation, setExplanation] = useState("");
+  const { setTheme } = useTheme();
+
+  useEffect(() => {
+    setTheme("light");
+  }, [setTheme]);
 
   const explain = async () => {
     if (!code.trim()) {

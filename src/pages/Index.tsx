@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { ArrowRight, Github, FileCode2, FolderTree, BookOpen, Sparkles, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -9,6 +9,7 @@ import { LoadingStages } from "@/components/LoadingStages";
 import { useAnalysisStore } from "@/store/analysis";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { useTheme } from "next-themes";
 
 const EXAMPLES = [
   "vercel/next.js",
@@ -21,6 +22,12 @@ const Index = () => {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const { setResult, setLoadingStage, setError } = useAnalysisStore();
+  const { setTheme } = useTheme();
+
+  useEffect(() => {
+    // Only force light if we want it to be default light every time
+    setTheme("light");
+  }, [setTheme]);
 
   const analyze = async (repoUrl: string) => {
     const clean = repoUrl.trim();

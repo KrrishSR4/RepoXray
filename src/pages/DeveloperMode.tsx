@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import {
@@ -15,6 +15,7 @@ import { Markdown } from "@/components/Markdown";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 type Suggestion = {
   title: string;
@@ -69,6 +70,11 @@ const DeveloperMode = () => {
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState(0);
   const [result, setResult] = useState<Result | null>(null);
+  const { setTheme } = useTheme();
+
+  useEffect(() => {
+    setTheme("dark");
+  }, [setTheme]);
 
   const run = async (raw: string) => {
     const v = raw.trim();
@@ -102,7 +108,7 @@ const DeveloperMode = () => {
   };
 
   return (
-    <div className="dark min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="pointer-events-none fixed inset-0 bg-grid bg-grid-fade opacity-40" />
       <div className="relative">
         {/* Developer mode badge in top-left */}
