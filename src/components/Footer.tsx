@@ -9,13 +9,13 @@ export function Footer() {
     <footer className={`border-t ${isDark ? 'border-[#9deda3] bg-[#1da828]' : 'border-[#1da828] bg-[#9deda3]'} backdrop-blur`}>
       <div className="mx-auto max-w-6xl px-4 py-4">
         <div className="flex flex-col items-center gap-2 text-center">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className={`flex items-center gap-2 text-sm ${isDark ? 'text-white' : 'text-muted-foreground'}`}>
             <span>Made with ❤️ by</span>
             <a
               href="https://github.com/KrrishSR4"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-foreground hover:text-primary transition-colors"
+              className={`font-medium transition-colors ${isDark ? 'text-white hover:text-[#9deda3]' : 'text-foreground hover:text-primary'}`}
             >
               Krish Mishra
             </a>
@@ -27,8 +27,8 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className={`flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium shadow-sm transition-all hover:shadow-md ${isDark
-                  ? 'border-[#9deda3] bg-[#9deda3] text-[#1da828] hover:bg-[#1da828] hover:text-white'
-                  : 'border-[#1da828] bg-[#1da828] text-white hover:bg-[#9deda3] hover:text-[#1da828]'
+                ? 'border-[#9deda3] bg-[#9deda3] text-[#1da828] hover:bg-[#1da828] hover:text-white'
+                : 'border-[#1da828] bg-[#1da828] text-white hover:bg-[#9deda3] hover:text-[#1da828]'
                 }`}
             >
               <Github className="h-4 w-4" />
@@ -40,8 +40,8 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className={`flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium shadow-sm transition-all hover:shadow-md ${isDark
-                  ? 'border-[#9deda3] bg-[#9deda3] text-[#1da828] hover:bg-[#1da828] hover:text-white'
-                  : 'border-[#1da828] bg-[#1da828] text-white hover:bg-[#9deda3] hover:text-[#1da828]'
+                ? 'border-[#9deda3] bg-[#9deda3] text-[#1da828] hover:bg-[#1da828] hover:text-white'
+                : 'border-[#1da828] bg-[#1da828] text-white hover:bg-[#9deda3] hover:text-[#1da828]'
                 }`}
             >
               <Github className="h-4 w-4" />
@@ -49,7 +49,7 @@ export function Footer() {
             </a>
           </div>
 
-          <p className="text-xs text-muted-foreground">
+          <p className={`text-xs ${isDark ? 'text-white' : 'text-muted-foreground'}`}>
             © 2026 RepoXray. No rights reserved.
           </p>
         </div>

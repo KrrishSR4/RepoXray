@@ -26,7 +26,7 @@ export function SiteHeader() {
         </Link>
 
         {/* Tagline */}
-        <p className="mt-2 max-w-md text-xs font-medium text-muted-foreground md:text-sm">
+        <p className={`mt-2 max-w-md text-xs font-medium md:text-sm ${isDark ? 'text-white' : 'text-muted-foreground'}`}>
           X-Ray Repositories, Don&apos;t Just Read Them.
         </p>
 
