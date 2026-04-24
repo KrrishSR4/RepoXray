@@ -1,8 +1,12 @@
 import { Github } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 export function Footer() {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   return (
-    <footer className="border-t border-[#1da828] bg-[#9deda3] backdrop-blur">
+    <footer className={`border-t ${isDark ? 'border-[#9deda3] bg-[#1da828]' : 'border-[#1da828] bg-[#9deda3]'} backdrop-blur`}>
       <div className="mx-auto max-w-6xl px-4 py-4">
         <div className="flex flex-col items-center gap-2 text-center">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
