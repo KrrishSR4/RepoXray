@@ -2,7 +2,7 @@ import { Github } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#9deda3] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <footer className="border-t border-[#1da828] bg-[#9deda3]/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto max-w-6xl px-4 py-4">
         <div className="flex flex-col items-center gap-2 text-center">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">

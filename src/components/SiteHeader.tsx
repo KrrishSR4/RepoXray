@@ -6,7 +6,7 @@ import logo from "@/assets/repoxray-logo.png";
 
 export function SiteHeader() {
   return (
-    <header className="relative z-30 border-b border-[#9deda3] bg-background/85 backdrop-blur-md">
+    <header className="relative z-30 border-b border-[#1da828] bg-[#9deda3]/85 backdrop-blur-md">
       {/* Theme toggle pinned to top-right */}
       <div className="absolute right-4 top-4">
         <ThemeToggle />
