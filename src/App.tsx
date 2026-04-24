@@ -17,8 +17,10 @@ import { useTheme } from "next-themes";
 const queryClient = new QueryClient();
 
 const ThemeAwareSplashCursor = () => {
-  const { theme } = useTheme();
-  const splashColor = theme === 'dark' ? '#91ff9a' : '#2f8f5b';
+  const { resolvedTheme } = useTheme();
+  // Dark mode & Developer mode get neon green
+  // Light mode gets dark green
+  const splashColor = resolvedTheme === 'dark' ? '#7aff85' : '#107a2e';
 
   return (
     <SplashCursor
