@@ -23,7 +23,7 @@ const ClickSpark = ({
   children
 }: ClickSparkProps) => {
   const { theme } = useTheme();
-  const effectiveColor = sparkColor || (theme === 'dark' ? '#ffffff' : '#228B22');
+  const effectiveColor = sparkColor || '#ffffff';
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sparksRef = useRef<Array<{
     x: number;
