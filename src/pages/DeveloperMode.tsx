@@ -52,7 +52,37 @@ type Insights = {
 
 type Result = {
   kind: "profile" | "repo";
-  context: any;
+  context: {
+    user?: {
+      login: string;
+      name: string;
+      bio: string;
+      avatar_url: string;
+      followers: number;
+      following: number;
+      public_repos: number;
+    };
+    repo?: {
+      name: string;
+      description: string;
+      stars: number;
+      forks: number;
+      language: string;
+      created_at: string;
+      updated_at: string;
+    };
+    stats?: {
+      total_commits: number;
+      total_repos: number;
+      languages: Record<string, number>;
+    };
+    topRepos?: Array<{
+      name: string;
+      stars: number;
+      url: string;
+      description?: string;
+    }>;
+  };
   insights: Insights;
 };
 
@@ -524,7 +554,7 @@ function ResultView({ result, onCopy }: { result: Result; onCopy: (t: string, l?
             {context.topRepos?.length > 0 && (
               <Card title="Top Repositories" icon={Star}>
                 <div className="grid gap-2 md:grid-cols-2">
-                  {context.topRepos.map((r: any) => (
+                  {context.topRepos.map((r: { name: string; stars: number; url: string }) => (
                     <a
                       key={r.name}
                       href={r.url}
@@ -668,7 +698,7 @@ function ResultView({ result, onCopy }: { result: Result; onCopy: (t: string, l?
 
 function Card({
   title, icon: Icon, action, children,
-}: { title: string; icon: any; action?: React.ReactNode; children: React.ReactNode }) {
+}: { title: string; icon: React.ComponentType<{ className?: string }>; action?: React.ReactNode; children: React.ReactNode }) {
   return (
     <div className="rounded-xl border border-border bg-card p-5 shadow-soft">
       <div className="mb-3 flex items-center justify-between gap-2">
