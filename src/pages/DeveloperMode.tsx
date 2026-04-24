@@ -104,6 +104,12 @@ const DeveloperMode = () => {
     <div className="dark min-h-screen bg-background text-foreground">
       <div className="pointer-events-none fixed inset-0 bg-grid bg-grid-fade opacity-40" />
       <div className="relative">
+        {/* Developer mode badge in top-right */}
+        <div className="fixed right-4 top-4 z-40 flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-primary shadow-[0_0_0_3px_hsl(var(--primary)/0.08)]">
+          <Star className="h-3 w-3 fill-current animate-pulse" />
+          developer mode
+        </div>
+
         <SiteHeader />
 
         <main className="mx-auto max-w-6xl px-4 py-10">
@@ -358,7 +364,7 @@ function ResultView({ result, onCopy }: { result: Result; onCopy: (t: string, l?
                   "border-0 font-mono",
                   score >= 80 ? "bg-primary/20 text-primary"
                     : score >= 60 ? "bg-amber-500/20 text-amber-400"
-                    : "bg-rose-500/20 text-rose-400",
+                      : "bg-rose-500/20 text-rose-400",
                 )}
               >
                 {score >= 80 ? "Excellent" : score >= 60 ? "Solid" : "Needs work"}
@@ -527,7 +533,7 @@ function ResultView({ result, onCopy }: { result: Result; onCopy: (t: string, l?
           >
             <div className="grid gap-4 lg:grid-cols-2">
               <pre className="max-h-[600px] overflow-auto rounded-lg border border-border bg-[hsl(var(--terminal-bg))] p-4 text-xs leading-relaxed text-[hsl(var(--terminal-fg))]">
-{insights.readme_md}
+                {insights.readme_md}
               </pre>
               <div className="max-h-[600px] overflow-auto rounded-lg border border-border bg-background/40 p-4">
                 <Markdown>{insights.readme_md}</Markdown>
@@ -649,8 +655,8 @@ function Stat({ icon: Icon, label }: { icon: any; label: string }) {
 function ImpactDot({ impact }: { impact: "low" | "medium" | "high" }) {
   const cls =
     impact === "high" ? "bg-primary shadow-[0_0_10px_hsl(var(--primary)/0.7)]"
-    : impact === "medium" ? "bg-amber-400"
-    : "bg-muted-foreground";
+      : impact === "medium" ? "bg-amber-400"
+        : "bg-muted-foreground";
   return <span className={cn("mt-1.5 inline-block h-2 w-2 shrink-0 rounded-full", cls)} />;
 }
 

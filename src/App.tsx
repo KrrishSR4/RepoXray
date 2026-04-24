@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import SplashCursor from "@/components/SplashCursor";
 import ClickSpark from "@/components/ClickSpark";
 import { Footer } from "@/components/Footer";
+import { Navigation } from "@/components/Navigation";
 import Index from "./pages/Index.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
 import SnippetExplain from "./pages/SnippetExplain.tsx";
@@ -43,14 +44,17 @@ const App = () => (
               extraScale={2}
             >
               <main className="flex-1">
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/explain" element={<SnippetExplain />} />
-                  <Route path="/developer" element={<DeveloperMode />} />
-                  <Route path="/dashboard" element={<Dashboard />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
+                <div className="container mx-auto px-4 py-6">
+                  <Navigation />
+                  <Routes>
+                    <Route path="/" element={<Index />} />
+                    <Route path="/explain" element={<SnippetExplain />} />
+                    <Route path="/developer" element={<DeveloperMode />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </div>
               </main>
             </ClickSpark>
             <Footer />
