@@ -117,7 +117,7 @@ const DeveloperMode = () => {
 
         <main className="mx-auto max-w-6xl px-4 py-10">
           {/* Nav */}
-          <div className="mb-8 flex justify-center">
+          <div className="mb-4 flex justify-center">
             <nav className="flex items-center gap-1.5 rounded-full border border-border bg-card p-1 text-xs shadow-soft">
               {[
                 { to: "/", label: "repo" },
