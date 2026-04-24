@@ -20,7 +20,7 @@ export function SiteHeader() {
         {/* Logo + Name — horizontal row */}
         <Link to="/" aria-label="RepoXray home" className="group flex items-center gap-3">
           <img src={logo} alt="RepoXray logo" className="h-24 w-auto object-contain" />
-          <span className="font-mono text-2xl font-bold tracking-tight md:text-3xl">
+          <span className="font-mono text-2xl font-bold tracking-tight md:text-3xl text-black">
             Repo<span className="text-[#1da828]">Xray</span>
           </span>
         </Link>
