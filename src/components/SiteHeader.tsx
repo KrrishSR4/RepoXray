@@ -21,12 +21,12 @@ export function SiteHeader() {
         <Link to="/" aria-label="RepoXray home" className="group flex items-center gap-3">
           <img src={logo} alt="RepoXray logo" className="h-24 w-auto object-contain" />
           <span className="font-mono text-2xl font-bold tracking-tight md:text-3xl">
-            Repo<span className="text-[#9deda3]">Xray</span>
+            Repo<span className={`text-[#9deda3] ${isDark ? 'drop-shadow-[0_0_3px_rgba(255,255,255,0.8)]' : 'drop-shadow-[0_0_3px_rgba(0,0,0,0.8)]'}`}>Xray</span>
           </span>
         </Link>
 
         {/* Tagline */}
-        <p className={`mt-2 max-w-md text-xs font-medium md:text-sm ${isDark ? 'text-white' : 'text-muted-foreground'}`}>
+        <p className={`mt-2 max-w-md text-xs font-medium md:text-sm ${isDark ? 'text-white drop-shadow-[0_0_2px_rgba(255,255,255,0.8)]' : 'text-muted-foreground drop-shadow-[0_0_2px_rgba(0,0,0,0.8)]'}`}>
           X-Ray Repositories, Don&apos;t Just Read Them.
         </p>
 

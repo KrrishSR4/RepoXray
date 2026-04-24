@@ -9,13 +9,13 @@ export function Footer() {
     <footer className={`border-t ${isDark ? 'border-[#9deda3] bg-[#1da828]' : 'border-[#1da828] bg-[#9deda3]'} backdrop-blur`}>
       <div className="mx-auto max-w-6xl px-4 py-4">
         <div className="flex flex-col items-center gap-2 text-center">
-          <div className={`flex items-center gap-2 text-sm ${isDark ? 'text-white' : 'text-muted-foreground'}`}>
+          <div className="flex items-center gap-2 text-sm text-black">
             <span>Made with ❤️ by</span>
             <a
               href="https://github.com/KrrishSR4"
               target="_blank"
               rel="noopener noreferrer"
-              className={`font-medium transition-colors ${isDark ? 'text-white hover:text-[#9deda3]' : 'text-foreground hover:text-primary'}`}
+              className="font-medium text-black hover:text-[#1da828] transition-colors"
             >
               Krish Mishra
             </a>
@@ -49,7 +49,7 @@ export function Footer() {
             </a>
           </div>
 
-          <p className={`text-xs ${isDark ? 'text-white' : 'text-muted-foreground'}`}>
+          <p className="text-xs text-black">
             © 2026 RepoXray. No rights reserved.
           </p>
         </div>
