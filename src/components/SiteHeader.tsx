@@ -6,7 +6,7 @@ import logo from "@/assets/repoxray-logo.png";
 
 export function SiteHeader() {
   return (
-    <header className="relative z-30 border-b border-border bg-background/85 backdrop-blur-md">
+    <header className="relative z-30 border-b border-[#9deda3] bg-background/85 backdrop-blur-md">
       {/* Theme toggle pinned to top-right */}
       <div className="absolute right-4 top-4">
         <ThemeToggle />
@@ -17,7 +17,7 @@ export function SiteHeader() {
         <Link to="/" aria-label="RepoXray home" className="group flex items-center gap-3">
           <img src={logo} alt="RepoXray logo" className="h-24 w-auto object-contain" />
           <span className="font-mono text-2xl font-bold tracking-tight md:text-3xl">
-            Repo<span className="text-primary">Xray</span>
+            Repo<span className="text-[#9deda3]">Xray</span>
           </span>
         </Link>
 
