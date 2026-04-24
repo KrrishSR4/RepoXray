@@ -20,7 +20,7 @@ const ThemeAwareSplashCursor = () => {
   const { resolvedTheme } = useTheme();
   // Dark mode & Developer mode get neon green
   // Light mode gets dark green
-  const splashColor = resolvedTheme === 'dark' ? '#7aff85' : '#107a2e';
+  const splashColor = resolvedTheme === 'dark' ? '#7aff85' : '#009900';
 
   return (
     <SplashCursor
