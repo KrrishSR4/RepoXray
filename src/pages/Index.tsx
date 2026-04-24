@@ -61,16 +61,6 @@ const Index = () => {
             <LoadingStages />
           ) : (
             <div className="animate-in-soft">
-              {/* Status chip */}
-              <div className="mb-6 flex justify-center">
-                <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 font-mono text-xs text-muted-foreground shadow-soft">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-                  </span>
-                  <span>RepoXray · v1.0 · powered by AI</span>
-                </div>
-              </div>
 
               <h1 className="text-center font-mono text-4xl font-bold leading-tight tracking-tight md:text-6xl">
                 <span className="text-muted-foreground">{"// "}</span>
