@@ -26,7 +26,10 @@ export function Footer() {
               href="https://github.com/KrrishSR4"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg border border-[#1da828] bg-[#1da828] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#9deda3] hover:text-[#1da828] transition-all hover:shadow-md"
+              className={`flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium shadow-sm transition-all hover:shadow-md ${isDark
+                  ? 'border-[#9deda3] bg-[#9deda3] text-[#1da828] hover:bg-[#1da828] hover:text-white'
+                  : 'border-[#1da828] bg-[#1da828] text-white hover:bg-[#9deda3] hover:text-[#1da828]'
+                }`}
             >
               <Github className="h-4 w-4" />
               github.com/KrrishSR4
@@ -36,7 +39,10 @@ export function Footer() {
               href="https://github.com/KrrishSR4/RepoXray"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg border border-[#1da828] bg-[#1da828] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#9deda3] hover:text-[#1da828] transition-all hover:shadow-md"
+              className={`flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium shadow-sm transition-all hover:shadow-md ${isDark
+                  ? 'border-[#9deda3] bg-[#9deda3] text-[#1da828] hover:bg-[#1da828] hover:text-white'
+                  : 'border-[#1da828] bg-[#1da828] text-white hover:bg-[#9deda3] hover:text-[#1da828]'
+                }`}
             >
               <Github className="h-4 w-4" />
               RepoXray
