@@ -74,6 +74,10 @@ const DeveloperMode = () => {
 
   useEffect(() => {
     setTheme("dark");
+
+    return () => {
+      setTheme("light");
+    };
   }, [setTheme]);
 
   const run = async (raw: string) => {
