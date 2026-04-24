@@ -12,8 +12,29 @@ import Dashboard from "./pages/Dashboard.tsx";
 import SnippetExplain from "./pages/SnippetExplain.tsx";
 import DeveloperMode from "./pages/DeveloperMode.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import { useTheme } from "next-themes";
 
 const queryClient = new QueryClient();
+
+const ThemeAwareSplashCursor = () => {
+  const { theme } = useTheme();
+  const splashColor = theme === 'dark' ? '#b5f5ba' : '#2e8b57';
+
+  return (
+    <SplashCursor
+      DENSITY_DISSIPATION={3}
+      VELOCITY_DISSIPATION={3.5}
+      PRESSURE={0.25}
+      CURL={3}
+      SPLAT_RADIUS={0.2}
+      SPLAT_FORCE={3500}
+      COLOR_UPDATE_SPEED={14}
+      SHADING
+      RAINBOW_MODE={false}
+      COLOR={splashColor}
+    />
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -23,18 +44,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <div className="min-h-screen flex flex-col">
-            <SplashCursor
-              DENSITY_DISSIPATION={3}
-              VELOCITY_DISSIPATION={3.5}
-              PRESSURE={0.25}
-              CURL={3}
-              SPLAT_RADIUS={0.2}
-              SPLAT_FORCE={3500}
-              COLOR_UPDATE_SPEED={14}
-              SHADING
-              RAINBOW_MODE={false}
-              COLOR="#228B22"
-            />
+            <ThemeAwareSplashCursor />
             <ClickSpark
               sparkSize={15}
               sparkRadius={30}
