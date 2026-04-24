@@ -18,7 +18,7 @@ const queryClient = new QueryClient();
 
 const ThemeAwareSplashCursor = () => {
   const { theme } = useTheme();
-  const splashColor = theme === 'dark' ? '#b5f5ba' : '#2e8b57';
+  const splashColor = theme === 'dark' ? '#91ff9a' : '#2f8f5b';
 
   return (
     <SplashCursor

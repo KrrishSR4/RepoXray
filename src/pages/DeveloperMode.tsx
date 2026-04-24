@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
+import { useTheme } from "next-themes";
 import {
   Activity, Award, BookText, Copy, ExternalLink, Github, Lightbulb,
   Loader2, Search, Sparkles, Star, Tag, TrendingUp, User, Zap, GitFork, FileCode2,
@@ -65,10 +66,15 @@ const LOADING_STEPS = [
 const EXAMPLES = ["torvalds", "vercel/next.js", "facebook/react", "octocat"];
 
 const DeveloperMode = () => {
+  const { setTheme } = useTheme();
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState(0);
   const [result, setResult] = useState<Result | null>(null);
+
+  useEffect(() => {
+    setTheme("dark");
+  }, [setTheme]);
 
   const run = async (raw: string) => {
     const v = raw.trim();
