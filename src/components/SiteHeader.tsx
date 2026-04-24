@@ -22,12 +22,12 @@ export function SiteHeader() {
             href="https://github.com/KrrishSR4"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-9 h-9 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+            className="flex items-center justify-center"
           >
             <img
               src={developerIcon}
               alt="GitHub"
-              className="w-5 h-5"
+              className="w-8 h-8"
             />
           </a>
         ) : (
