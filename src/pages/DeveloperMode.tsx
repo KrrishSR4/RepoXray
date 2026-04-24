@@ -104,8 +104,8 @@ const DeveloperMode = () => {
     <div className="dark min-h-screen bg-background text-foreground">
       <div className="pointer-events-none fixed inset-0 bg-grid bg-grid-fade opacity-40" />
       <div className="relative">
-        {/* Developer mode badge in top-right */}
-        <div className="fixed right-4 top-4 z-40 flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-primary shadow-[0_0_0_3px_hsl(var(--primary)/0.08)]">
+        {/* Developer mode badge in top-left */}
+        <div className="fixed left-4 top-4 z-40 flex items-center gap-2 rounded-full border border-primary/60 bg-primary/20 px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-primary shadow-[0_0_0_3px_hsl(var(--primary)/0.12)]">
           <Star className="h-3 w-3 fill-current animate-pulse" />
           developer mode
         </div>
