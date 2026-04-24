@@ -16,7 +16,7 @@ export function SiteHeader() {
   return (
     <header className="relative z-30 border-b border-[#1da828] bg-[#9deda3] backdrop-blur-md">
       {/* Theme toggle / GitHub link pinned to top-right */}
-      <div className="absolute right-4 top-4">
+      <div className="absolute right-4 top-9">
         {isDeveloperMode ? (
           <a
             href="https://github.com/KrrishSR4"
@@ -27,7 +27,7 @@ export function SiteHeader() {
             <img
               src={developerIcon}
               alt="GitHub"
-              className="w-8 h-8"
+              className="w-16 h-16"
             />
           </a>
         ) : (

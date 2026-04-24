@@ -15,7 +15,6 @@ import { Markdown } from "@/components/Markdown";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
 
 type Suggestion = {
   title: string;
@@ -70,11 +69,6 @@ const DeveloperMode = () => {
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState(0);
   const [result, setResult] = useState<Result | null>(null);
-  const { setTheme } = useTheme();
-
-  useEffect(() => {
-    setTheme("dark");
-  }, [setTheme]);
 
   const run = async (raw: string) => {
     const v = raw.trim();
