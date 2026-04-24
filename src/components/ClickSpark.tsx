@@ -25,7 +25,7 @@ const ClickSpark = ({
   const { theme } = useTheme();
   const isDarkMode = theme === 'dark';
   const isDeveloperMode = theme === 'developer';
-  const effectiveColor = sparkColor || (isDarkMode || isDeveloperMode) ? '#ffffff' : '#2E8B57';
+  const effectiveColor = sparkColor || (isDarkMode) ? '#ffffff' : '#2E8B57';
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sparksRef = useRef<Array<{
     x: number;
