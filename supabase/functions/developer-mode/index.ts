@@ -51,13 +51,56 @@ function parseInput(input: string): {
   return null;
 }
 
+interface GHUser {
+  login: string;
+  name: string | null;
+  bio: string | null;
+  avatar_url: string;
+  html_url: string;
+  followers: number;
+  following: number;
+  public_repos: number;
+  created_at: string;
+  company: string | null;
+  location: string | null;
+  blog: string | null;
+}
+
+interface GHRepo {
+  name: string;
+  full_name: string;
+  owner: { login: string };
+  description: string | null;
+  html_url: string;
+  homepage: string | null;
+  stargazers_count: number;
+  forks_count: number;
+  subscribers_count?: number;
+  open_issues_count: number;
+  language: string | null;
+  license: { spdx_id: string } | null;
+  topics: string[];
+  default_branch: string;
+  created_at: string;
+  updated_at: string;
+  pushed_at: string;
+  size: number;
+  has_wiki: boolean;
+  has_issues: boolean;
+  archived: boolean;
+}
+
+interface GHEvent {
+  created_at: string;
+}
+
 async function fetchProfileData(owner: string) {
-  const user = await gh<any>(`/users/${owner}`);
+  const user = await gh<GHUser>(`/users/${owner}`);
   if (!user) throw new Error("GitHub user not found");
-  const repos = await gh<any[]>(
+  const repos = await gh<GHRepo[]>(
     `/users/${owner}/repos?per_page=100&sort=updated`,
   ) ?? [];
-  const events = await gh<any[]>(`/users/${owner}/events/public?per_page=100`) ?? [];
+  const events = await gh<GHEvent[]>(`/users/${owner}/events/public?per_page=100`) ?? [];
 
   const langs: Record<string, number> = {};
   let totalStars = 0;
@@ -125,7 +168,7 @@ async function fetchProfileData(owner: string) {
 }
 
 async function fetchRepoData(owner: string, repo: string) {
-  const r = await gh<any>(`/repos/${owner}/${repo}`);
+  const r = await gh<GHRepo>(`/repos/${owner}/${repo}`);
   if (!r) throw new Error("Repository not found");
   const langs = (await gh<Record<string, number>>(`/repos/${owner}/${repo}/languages`)) ?? {};
   let readme = "";
@@ -139,7 +182,7 @@ async function fetchRepoData(owner: string, repo: string) {
   // top-level tree
   let topTree: string[] = [];
   try {
-    const tree = await gh<any>(`/repos/${owner}/${repo}/contents`);
+    const tree = await gh<{ type: string; name: string }[]>(`/repos/${owner}/${repo}/contents`);
     if (Array.isArray(tree)) topTree = tree.map((t) => `${t.type === "dir" ? "📁" : "📄"} ${t.name}`);
   } catch { /* ignore */ }
 
@@ -287,7 +330,7 @@ serve(async (req) => {
       });
     }
 
-    let context: any;
+    let context: { kind: "repo" | "profile"; data: unknown };
     if (parsed.type === "repo" && parsed.repo) {
       context = { kind: "repo", data: await fetchRepoData(parsed.owner, parsed.repo) };
     } else {

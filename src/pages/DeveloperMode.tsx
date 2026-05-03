@@ -721,7 +721,7 @@ function CopyBtn({ text, onCopy, label }: { text: string; onCopy: (t: string, l?
   );
 }
 
-function Stat({ icon: Icon, label }: { icon: any; label: string }) {
+function Stat({ icon: Icon, label }: { icon: React.ComponentType<{ className?: string }>; label: string }) {
   return (
     <span className="inline-flex items-center gap-1">
       <Icon className="h-3 w-3" /> {label}
