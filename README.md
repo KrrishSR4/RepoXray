@@ -1,31 +1,31 @@
-# 🔍 RepoXray
+#  RepoXray
 
 > **X-Ray Repositories, Don’t Just Read Them.**
 
 ---
 
-## 🚀 Overview
+##  Overview
 
 **RepoXray** is an AI-powered developer tool that helps you **understand any GitHub repository like a senior developer**.
 
 Paste a repo → get:
 
-* 📘 Structured explanation
-* 🌳 File-wise breakdown
-* 🧠 Smart insights
-* 🚀 Guided learning path
+*  Structured explanation
+*  File-wise breakdown
+*  Smart insights
+*  Guided learning path
 
 ---
 
-## 🖼️ Preview
+##  Preview
 
-### 🏠 Home
+###  Home
 
 ![Home Preview](preview/home.png)
 
 ---
 
-### 🧩 Snippet Mode
+###  Snippet Mode
 
 ![Snippet Preview](preview/snippet.png)
 
@@ -37,23 +37,23 @@ Paste a repo → get:
 
 ---
 
-## ⚡ Features
+##  Features
 
-* 🔍 Repository Analysis
-* 🌳 Guided Structure
-* 📘 Friendly Overview
-* 🚀 Start-Here Path
-* 🧑‍💻 Developer Mode
+*  Repository Analysis
+*  Guided Structure
+*  Friendly Overview
+*  Start-Here Path
+*  Developer Mode
 
   * Profile Analyzer
   * Repo Score
   * README Generator
   * SEO Optimizer
-* 🛡️ DevSecOps Insights (Upcoming)
+*  DevSecOps Insights (Upcoming)
 
 ---
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 RepoXray/
@@ -80,81 +80,109 @@ RepoXray/
 
 ---
 
-## 🔄 How It Works
+##  How It Works
 
+
+
+```mermaid
+graph TD
+    User[Developer / Learner] -->|Paste Repository URL| UI[RepoXray Web Interface]
+
+    UI --> Analyze[Repository Analysis Engine]
+
+    Analyze --> GitHub[GitHub Repository Fetcher]
+    GitHub --> Structure[Repository Structure Parser]
+
+    Structure --> Overview[Project Overview Generator]
+    Structure --> Files[File & Folder Analyzer]
+    Structure --> Entry[Start-Here Path Generator]
+
+    Overview --> LLM[AI Analysis Engine]
+    Files --> LLM
+    Entry --> LLM
+
+    LLM --> Dashboard[Interactive Results Dashboard]
+
+    Dashboard --> Summary[Repository Summary]
+    Dashboard --> Tree[Guided Structure]
+    Dashboard --> Insights[Important Files]
+    Dashboard --> Learning[Learning Path]
+
+    User --> DevMode[Developer Mode]
+
+    DevMode --> Profile[GitHub Profile Analyzer]
+    DevMode --> Score[Repository Score Engine]
+    DevMode --> Readme[README Generator]
+    DevMode --> SEO[GitHub SEO Optimizer]
+
+    Profile --> Recommendations[Improvement Suggestions]
+    Score --> Recommendations
+    Readme --> Recommendations
+    SEO --> Recommendations
 ```
-        ┌───────────────┐
-        │  User Input   │
-        │ (Repo URL)    │
-        └──────┬────────┘
-               ↓
-        ┌───────────────┐
-        │ Repo Fetching │
-        └──────┬────────┘
-               ↓
-        ┌───────────────┐
-        │ AI Processing │
-        │ (LLM Engine)  │
-        └──────┬────────┘
-               ↓
-        ┌───────────────┐
-        │ Structured UI │
-        │ Output Tabs   │
-        └───────────────┘
+
+
+---
+
+##  Internal Flow
+
+```mermaid
+graph TD
+    User[User]
+
+    User --> Engine[RepoXray]
+
+    Engine --> Repo[Repository]
+    Repo --> Overview[Overview]
+    Repo --> Files[Files]
+    Repo --> Path[Learning Path]
+
+    Engine --> Snippet[Snippet]
+    Snippet --> Explain[Explain]
+    Snippet --> Review[Review]
+
+    Engine --> Dev[Developer]
+    Dev --> Profile[Profile]
+    Dev --> Score[Score]
+    Dev --> Readme[README]
+    Dev --> SEO[SEO]
 ```
 
 ---
 
-## 🧭 Internal Flow
+##  UI Flow
 
-```
-User → Input Repo
-        ↓
-GitHub API → Fetch Files
-        ↓
-Parser → Extract Structure
-        ↓
-LLM → Generate Insights
-        ↓
-Formatter → Clean Output
-        ↓
-Frontend → Display Tabs
-```
+```mermaid
+graph TD
+    Home[RepoXray Home]
 
----
+    Home --> Analyze[Analyze Repository]
 
-## 🧩 UI Flow
+    Analyze --> Dashboard[Interactive Dashboard]
 
-```
-[ Home ]
-   ↓
-[ Paste Repo URL ]
-   ↓
-[ Analysis Loading ]
-   ↓
-[ Output Dashboard ]
-   ├── Overview
-   ├── Structure
-   ├── File Insights
-   └── Start Here
+    Dashboard --> Overview[Project Overview]
+    Dashboard --> Structure[Structure Explorer]
+    Dashboard --> Insights[File Insights]
+    Dashboard --> Path[Learning Path]
 ```
 
 ---
 
-## 🧑‍💻 Developer Mode
+##  Developer Mode
 
-```
-Developer Mode
-   ├── Profile Analysis
-   ├── Repo Score
-   ├── README Generator
-   ├── SEO Optimizer
-   └── Suggestions Engine
-```
+```mermaid
+graph TD
+    Dev[Developer Mode]
 
+    Dev --> Profile[Profile Intelligence]
+    Dev --> Score[Repository Health Score]
+    Dev --> Readme[README Generator]
+    Dev --> SEO[SEO Optimizer]
+    Dev --> Insights[Actionable Insights]
+```
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ```bash
 git clone https://github.com/KrrishSR4/RepoXray.git
@@ -165,31 +193,31 @@ npm run dev
 
 ---
 
-## 💡 Use Cases
+##  Use Cases
 
-* 🧑‍🎓 Students learning open-source
-* 👨‍💻 Developers exploring repos
-* 🏢 Teams reviewing projects
-* 🚀 Beginners understanding codebases
-
----
-
-## 🌟 Future Enhancements
-
-* 🛡️ DevSecOps Security Scanner
-* 📊 Repo Health Score
-* 🔄 CI/CD Detection
-* 🤖 AI Code Reviewer
+*  Students learning open-source
+*  Developers exploring repos
+*  Teams reviewing projects
+*  Beginners understanding codebases
 
 ---
 
-## 🔥 RepoXray Philosophy
+##  Future Enhancements
+
+*  DevSecOps Security Scanner
+*  Repo Health Score
+*  CI/CD Detection
+*  AI Code Reviewer
+
+---
+
+##  RepoXray Philosophy
 
 > “Don’t just read code. Understand it.”
 
 ---
 
-## 📈 SEO Keywords
+##  SEO Keywords
 
 github repo analyzer
 ai code explainer
