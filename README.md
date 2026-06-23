@@ -229,19 +229,19 @@ repo structure analyzer
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Pull requests are welcome.
 Open an issue for suggestions or improvements.
 
 ---
 
-## ⭐ Support
+##  Support
 
 If you like this project, give it a ⭐ on GitHub!
 
 ---
 
-## 🚀 RepoXray
+##  RepoXray
 
 > **X-Ray. Refine. Repeat.**
